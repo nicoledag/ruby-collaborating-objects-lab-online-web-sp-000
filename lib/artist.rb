@@ -13,7 +13,7 @@ attr_accessor :name, :songs
 
   def add_song(song)
     @songs << song
-    song.artist = self
+    
   end
 
   def songs
@@ -26,7 +26,6 @@ attr_accessor :name, :songs
 
   def save
    @@all << self
-   self
   end
 
   def self.find_or_create_by_name(name)

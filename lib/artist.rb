@@ -25,9 +25,9 @@ attr_accessor :name, :songs
   end
 
   def self.find_or_create_by_name(name)
-    self.all.detect do |artist| artist.name == name || self.new(name).save
-    end
+    @@all.find {|artist| artist.name == name} || self.new(name).save
   end
+  
 
   def print_songs
     @songs.each {|song| puts song.name }
